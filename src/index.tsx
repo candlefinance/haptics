@@ -1,22 +1,36 @@
 import { NativeModules, Platform } from 'react-native';
 
-const LINKING_ERROR =
-  `The package '@candlefinance/haptics' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+const Haptics = NativeModules.Haptics;
 
-const Haptics = NativeModules.Haptics
-  ? NativeModules.Haptics
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+export type HapticType =
+  | 'light'
+  | 'medium'
+  | 'heavy'
+  | 'success'
+  | 'warning'
+  | 'error';
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Haptics.multiply(a, b);
+export function haptic(type: HapticType = 'medium') {
+  if (Platform.OS === 'android') {
+    console.warn('Haptics is not supported on Android');
+    return;
+  }
+  Haptics.haptic(type);
+}
+
+/**
+ * "O" (capital "o") - heavy impact
+"o" - medium impact
+"." - light impact
+"-" - delay which has duration of 0.1 second
+ */
+export type HapticPattern = 'O' | 'o' | '.' | '-';
+
+export function hapticWithPattern(pattern: HapticPattern[], delay: number = 0) {
+  console.log('hapticWithPattern', pattern, delay);
+  if (Platform.OS === 'android') {
+    console.warn('Haptics is not supported on Android');
+    return;
+  }
+  Haptics.hapticWithPattern(pattern, delay);
 }

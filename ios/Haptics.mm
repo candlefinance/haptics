@@ -2,13 +2,12 @@
 
 @interface RCT_EXTERN_MODULE(Haptics, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(haptic:(NSString *)type)
+RCT_EXTERN_METHOD(hapticWithPattern:(NSArray<NSString *> *)pattern delay:(nonnull NSNumber *)delay)
 
 + (BOOL)requiresMainQueueSetup
 {
-  return NO;
+  return YES;
 }
 
 @end
