@@ -12,7 +12,7 @@ export type HapticType =
 
 export function haptic(type: HapticType = 'medium') {
   if (Platform.OS === 'android') {
-    console.warn('Haptics is not supported on Android');
+    console.log('Haptics is not supported on Android');
     return;
   }
   Haptics.haptic(type);
@@ -33,7 +33,7 @@ export type HapticPattern = '.' | '-' | 'o' | 'O' | 'x' | 'X';
 export function hapticWithPattern(pattern: HapticPattern[], delay: number = 0) {
   console.log('hapticWithPattern', pattern, delay);
   if (Platform.OS === 'android') {
-    console.warn('Haptics is not supported on Android');
+    console.log('Haptics is not supported on Android');
     return;
   }
   Haptics.hapticWithPattern(pattern, delay);
