@@ -6,9 +6,12 @@ export type HapticType =
   | 'light'
   | 'medium'
   | 'heavy'
+  | 'rigid'
+  | 'soft'
   | 'success'
   | 'warning'
-  | 'error';
+  | 'error'
+  | 'selectionChanged';
 
 export function haptic(type: HapticType = 'medium') {
   if (Platform.OS === 'android') {

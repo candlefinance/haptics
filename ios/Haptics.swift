@@ -2,7 +2,8 @@ import Haptica
 
 @objc(Haptics)
 class Haptics: NSObject {
-    let generator = UINotificationFeedbackGenerator()
+    lazy var generator = UINotificationFeedbackGenerator()
+    lazy var selection = UISelectionFeedbackGenerator()
     
     @objc(haptic:)
     func haptic(type: String) {
@@ -21,6 +22,8 @@ class Haptics: NSObject {
             generator.notificationOccurred(.success)
         case "warning":
             generator.notificationOccurred(.warning)
+        case "selectionChanged":
+            selection.selectionChanged()
         default:
             generator.notificationOccurred(.error)
         }
