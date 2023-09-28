@@ -19,7 +19,7 @@
 
 <br/>
 
-The package only supports the _iOS_ using [Haptica](https://github.com/efremidze/Haptica) under the hood.
+The package only supports the **iOS** using [Haptica](https://github.com/efremidze/Haptica) under the hood.
 
 ## Installation
 
