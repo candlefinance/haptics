@@ -50,12 +50,12 @@ hapticWithPattern(
 
 The pattern format:
 
-O - heavy impact
-o - medium impact
-. - light impact
-X - rigid impact
-x - soft impact
-- wait 0.1 second
+- `O` - heavy impact
+- `o` - medium impact
+- `.` - light impact
+- `X` - rigid impact
+- `x` - soft impact
+- `-` wait 0.1 second
 
 ## Contributing
 
