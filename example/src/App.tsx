@@ -1,20 +1,15 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { haptic, hapticWithPattern } from '@candlefinance/haptics';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {}, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
       <Pressable
         onPress={() => {
           console.log('haptic');
-          haptic('medium');
+          haptic('error');
         }}
       >
         <Text>Medium</Text>

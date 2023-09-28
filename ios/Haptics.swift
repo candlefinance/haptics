@@ -1,36 +1,28 @@
-import Haptico
+import Haptica
 
 @objc(Haptics)
 class Haptics: NSObject {
+    let generator = UINotificationFeedbackGenerator()
     
     @objc(haptic:)
     func haptic(type: String) {
-        print("running haptic", type)
-        var notification: HapticoNotification? = nil
-        var impact: HapticoImpact? = nil
         switch type {
         case "light":
-            impact = HapticoImpact.light
+            Haptic.impact(.light).generate()
         case "medium":
-            impact = HapticoImpact.medium
+            Haptic.impact(.medium).generate()
         case "heavy":
-            impact = HapticoImpact.heavy
+            Haptic.impact(.heavy).generate()
+        case "rigid":
+            Haptic.impact(.rigid).generate()
+        case "soft":
+            Haptic.impact(.soft).generate()
         case "success":
-            notification = HapticoNotification.success
+            generator.notificationOccurred(.success)
         case "warning":
-            notification = HapticoNotification.warning
+            generator.notificationOccurred(.warning)
         default:
-            notification = HapticoNotification.error
-        }
-        if let notification {
-            DispatchQueue.main.async {
-                Haptico.shared().generate(notification)
-            }
-        }
-        if let impact {
-            DispatchQueue.main.async {
-                Haptico.shared().generate(impact)
-            }
+            generator.notificationOccurred(.error)
         }
     }
     
@@ -38,9 +30,8 @@ class Haptics: NSObject {
     func hapticWithPattern(pattern: [String], delay: Double) {
         print("running haptic pattern", pattern)
         let toPattern = pattern.joined(separator: "")
-        // run on main
         DispatchQueue.main.async {
-            Haptico.shared().generateFeedbackFromPattern(toPattern, delay: delay)
+            Haptic.play(toPattern, delay: delay)
         }
     }
 }
