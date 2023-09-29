@@ -21,17 +21,21 @@ export function haptic(type: HapticType = 'medium') {
   Haptics.haptic(type);
 }
 
-/*
-Use pattern symbols to represent custom vibrations.
-
-O - heavy impact
-o - medium impact
-. - light impact
-X - rigid impact
-x - soft impact
-- - wait 0.1 second
-*/
-export type HapticPattern = '.' | '-' | 'o' | 'O' | 'x' | 'X';
+/**
+ * Represents different haptic patterns.
+ *
+ * - `.`: Represents a light impact.
+ * - `-`: Represents a wait of 0.1 second.
+ * - `o`: Represents a medium impact.
+ * - `O`: Represents a heavy impact.
+ * - `x`: Represents a soft impact.
+ * - `X`: Represents a rigid impact.
+ */
+export type HapticPattern =
+  | '.' // Represents a light impact
+  | '-' // Represents a wait of 0.1 second
+  | 'o' // Represents a medium impact
+  | 'O'; // Represents a heavy impact
 
 export function hapticWithPattern(pattern: HapticPattern[], delay: number = 0) {
   console.log('hapticWithPattern', pattern, delay);

@@ -1,4 +1,4 @@
-import Haptica
+import Haptico
 
 @objc(Haptics)
 class Haptics: NSObject {
@@ -7,17 +7,23 @@ class Haptics: NSObject {
     
     @objc(haptic:)
     func haptic(type: String) {
+        print("haptic", type)
         switch type {
         case "light":
-            Haptic.impact(.light).generate()
+            let impact = UIImpactFeedbackGenerator(style: .light)
+            impact.impactOccurred()
         case "medium":
-            Haptic.impact(.medium).generate()
+            let impact = UIImpactFeedbackGenerator(style: .medium)
+            impact.impactOccurred()
         case "heavy":
-            Haptic.impact(.heavy).generate()
+            let impact = UIImpactFeedbackGenerator(style: .heavy)
+            impact.impactOccurred()
         case "rigid":
-            Haptic.impact(.rigid).generate()
+            let impact = UIImpactFeedbackGenerator(style: .rigid)
+            impact.impactOccurred()
         case "soft":
-            Haptic.impact(.soft).generate()
+            let impact = UIImpactFeedbackGenerator(style: .soft)
+            impact.impactOccurred()
         case "success":
             generator.notificationOccurred(.success)
         case "warning":
@@ -34,7 +40,7 @@ class Haptics: NSObject {
         print("running haptic pattern", pattern)
         let toPattern = pattern.joined(separator: "")
         DispatchQueue.main.async {
-            Haptic.play(toPattern, delay: delay)
+            Haptico.shared().generateFeedbackFromPattern(toPattern, delay: delay)
         }
     }
 }

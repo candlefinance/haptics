@@ -19,7 +19,7 @@
 
 <br/>
 
-The package only supports the **iOS** using [Haptica](https://github.com/efremidze/Haptica) under the hood.
+The package only supports the **iOS** 13+ using [Haptico](https://github.com/iSapozhnik/Haptico) under the hood.
 
 ## Installation
 
@@ -38,7 +38,7 @@ There are two functions:
 ```js
 import { haptic, hapticWithPattern } from '@candlefinance/haptics';
 
-// light, medium, heavy, soft, rigid, warning, error, success, selectionChanged.
+// light, medium, heavy, soft, rigid, warning, error, success, selectionChanged
 haptic('medium');
 
 // pattern, delay
@@ -53,8 +53,6 @@ The pattern format:
 - `O` - heavy impact
 - `o` - medium impact
 - `.` - light impact
-- `X` - rigid impact
-- `x` - soft impact
 - `-` wait 0.1 second
 
 ## Contributing
