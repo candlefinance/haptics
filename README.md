@@ -53,7 +53,7 @@ The pattern format:
 - `O` - heavy impact
 - `o` - medium impact
 - `.` - light impact
-- `-` wait 0.1 second
+- `-` - wait 0.1 second
 
 ## Contributing
 
