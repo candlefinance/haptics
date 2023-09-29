@@ -19,7 +19,7 @@
 
 <br/>
 
-The package only supports the **iOS** 13+ using [Haptico](https://github.com/iSapozhnik/Haptico) under the hood.
+The package only supports **iOS** 13+ using [Haptico](https://github.com/iSapozhnik/Haptico) under the hood.
 
 ## Installation
 
