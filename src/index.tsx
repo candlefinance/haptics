@@ -38,7 +38,6 @@ export type HapticPattern =
   | 'O'; // Represents a heavy impact
 
 export function hapticWithPattern(pattern: HapticPattern[], delay: number = 0) {
-  console.log('hapticWithPattern', pattern, delay);
   if (Platform.OS === 'android') {
     console.log('Haptics is not supported on Android');
     return;
