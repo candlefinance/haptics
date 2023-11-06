@@ -1,6 +1,6 @@
 {
   "name": "@candlefinance/haptics",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Haptic feedback generator with support for playing patterns.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
