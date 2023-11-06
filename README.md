@@ -33,7 +33,7 @@ npm i @candlefinance/haptics
 
 ## Basic Usage
 
-There are two functions:
+There are three functions:
 
 ```js
 import { haptic, hapticWithPattern } from '@candlefinance/haptics';
