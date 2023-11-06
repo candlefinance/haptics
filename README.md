@@ -19,7 +19,7 @@
 
 <br/>
 
-The package only supports **iOS** 13+ using [Haptico](https://github.com/iSapozhnik/Haptico) under the hood.
+Supports playing haptics on iOS with default UIImpactFeedbackGenerator and CoreHaptics for patterns and ahap files.
 
 ## Installation
 
@@ -41,19 +41,23 @@ import { haptic, hapticWithPattern } from '@candlefinance/haptics';
 // light, medium, heavy, soft, rigid, warning, error, success, selectionChanged
 haptic('medium');
 
-// pattern, delay
-hapticWithPattern(
-  ['.', '.', '.', 'o', 'O', '-', 'O', 'o', '.', '.', '.', '.'],
-  0.1
-);
+// pattern
+hapticWithPattern(['.', '.', '.', 'o', 'O', '-', 'O', 'o', '.', '.', '.', '.']);
+
+// play ahap file
+play('fileName');
 ```
 
 The pattern format:
 
-- `O` - heavy impact
-- `o` - medium impact
-- `.` - light impact
-- `-` - wait 0.1 second
+- 'o' // medium impact
+- 'O' // heavy impact
+- '.' // light impact
+- ':' // soft impact
+- '-' // wait of 0.1 second
+- '=' // wait of 1 second
+
+For playing ahap files to the root of your project add a folder called `haptics` and add your ahap files there. Use (Haptrix)[https://www.haptrix.com/] or equivalent to generate ahap files.
 
 ## Contributing
 

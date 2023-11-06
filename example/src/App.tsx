@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import type { HapticType } from '@candlefinance/haptics';
-import { haptic, hapticWithPattern } from '@candlefinance/haptics';
+import { haptic, hapticWithPattern, play } from '@candlefinance/haptics';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
@@ -36,38 +36,44 @@ export default function App() {
         style={styles.button}
         onPress={() => {
           console.log('hapticWithPattern');
-          hapticWithPattern(
-            [
-              '.',
-              '.',
-              '.',
-              'o',
-              'O',
-              '-',
-              'O',
-              'o',
-              '.',
-              '.',
-              '.',
-              '.',
-              '.',
-              '.',
-              '.',
-              'o',
-              'O',
-              '-',
-              'O',
-              'o',
-              '.',
-              '.',
-              '.',
-              '.',
-            ],
-            1
-          );
+          hapticWithPattern([
+            '.',
+            '.',
+            '.',
+            'o',
+            'O',
+            '-',
+            'O',
+            'o',
+            '.',
+            '.',
+            '.',
+            '.',
+            '.',
+            '.',
+            '.',
+            'o',
+            'O',
+            '=',
+            'O',
+            'o',
+            '.',
+            '.',
+            '.',
+            '.',
+          ]);
         }}
       >
         <Text>Pattern</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          console.log('hapticWithPatternFile');
+          play('test');
+        }}
+      >
+        <Text>Play File</Text>
       </Pressable>
     </View>
   );

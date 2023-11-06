@@ -33,8 +33,8 @@ class Haptics: NSObject {
         }
     }
     
-    @objc(hapticWithPattern:delay:)
-    func hapticWithPattern(pattern: [String], delay: Double) {
+    @objc(hapticWithPattern:)
+    func hapticWithPattern(pattern: [String]) {
         print("running haptic pattern", pattern)
         try? HapticsHelper.initialize()
         var components: [HapticsHelper.HapticPatternComponent] = []
@@ -61,5 +61,10 @@ class Haptics: NSObject {
             }
         }
         try? HapticsHelper.generateHaptic(fromComponents: components).play()
+    }
+    
+    @objc(play:loop:)
+    func play(fileName: String, loop: Bool) {
+        Vibrator.shared.startHaptic(named: fileName, loop: loop)
     }
 }

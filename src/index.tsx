@@ -46,3 +46,11 @@ export function hapticWithPattern(pattern: HapticPattern[]) {
   }
   Haptics.hapticWithPattern(pattern);
 }
+
+export function play(fileName: string, loop: boolean = false) {
+  if (Platform.OS === 'android') {
+    console.log('Haptics is not supported on Android');
+    return;
+  }
+  Haptics.play(fileName, loop);
+}
