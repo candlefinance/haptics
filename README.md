@@ -50,12 +50,14 @@ play('fileName');
 
 The pattern format:
 
+```
 - 'o' - medium impact
 - 'O' - heavy impact
 - '.' - light impact
 - ':' - soft impact
 - '-' - wait of 0.1 second
 - '=' - wait of 1 second
+```
 
 For playing ahap files to the root of your project add a folder called `haptics` and add your ahap files there. Use (Haptrix)[https://www.haptrix.com/] or equivalent to generate ahap files.
 
