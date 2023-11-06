@@ -24,23 +24,25 @@ export function haptic(type: HapticType = 'medium') {
 /**
  * Represents different haptic patterns.
  *
- * - `.`: Represents a light impact.
- * - `-`: Represents a wait of 0.1 second.
- * - `o`: Represents a medium impact.
- * - `O`: Represents a heavy impact.
- * - `x`: Represents a soft impact.
- * - `X`: Represents a rigid impact.
+ * 'o' // Represents a medium impact
+ * 'O' // Represents a heavy impact
+ * '.' // Represents a light impact
+ * ':' // Represents a soft impact
+ * '-' // Represents a wait of 0.1 second
+ * '='; // Represents a wait of 1 second
  */
 export type HapticPattern =
-  | '.' // Represents a light impact
-  | '-' // Represents a wait of 0.1 second
   | 'o' // Represents a medium impact
-  | 'O'; // Represents a heavy impact
+  | 'O' // Represents a heavy impact
+  | '.' // Represents a light impact
+  | ':' // Represents a soft impact
+  | '-' // Represents a wait of 0.1 second
+  | '='; // Represents a wait of 1 second
 
-export function hapticWithPattern(pattern: HapticPattern[], delay: number = 0) {
+export function hapticWithPattern(pattern: HapticPattern[]) {
   if (Platform.OS === 'android') {
     console.log('Haptics is not supported on Android');
     return;
   }
-  Haptics.hapticWithPattern(pattern, delay);
+  Haptics.hapticWithPattern(pattern);
 }

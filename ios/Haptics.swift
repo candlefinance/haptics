@@ -1,5 +1,3 @@
-import Haptico
-
 @objc(Haptics)
 class Haptics: NSObject {
     lazy var generator = UINotificationFeedbackGenerator()
@@ -38,9 +36,30 @@ class Haptics: NSObject {
     @objc(hapticWithPattern:delay:)
     func hapticWithPattern(pattern: [String], delay: Double) {
         print("running haptic pattern", pattern)
-        let toPattern = pattern.joined(separator: "")
-        DispatchQueue.main.async {
-            Haptico.shared().generateFeedbackFromPattern(toPattern, delay: delay)
+        try? HapticsHelper.initialize()
+        var components: [HapticsHelper.HapticPatternComponent] = []
+        for char in pattern {
+            guard char.count == 1 else {
+                print("error: \(char)")
+                return
+            }
+            switch char {
+            case "O":
+                components.append(.impact(.hard, .sharp))
+            case "o":
+                components.append(.impact(.hard, .dull))
+            case ".":
+                components.append(.impact(.soft, .sharp))
+            case ":":
+                components.append(.impact(.soft, .dull))
+            case "-":
+                components.append(.delay(0.1))
+            case "=":
+                components.append(.delay(1))
+            default:
+                print("Invalid input")
+            }
         }
+        try? HapticsHelper.generateHaptic(fromComponents: components).play()
     }
 }
