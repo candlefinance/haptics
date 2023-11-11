@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import type { HapticType } from '@candlefinance/haptics';
-import { haptic, hapticWithPattern, play } from '@candlefinance/haptics';
+import { haptic, hapticWithPattern, play, stop } from '@candlefinance/haptics';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
@@ -74,6 +74,15 @@ export default function App() {
         }}
       >
         <Text>Play File</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          console.log('hapticWithPatternFile');
+          stop();
+        }}
+      >
+        <Text>stop File</Text>
       </Pressable>
     </View>
   );

@@ -5,6 +5,7 @@
 RCT_EXTERN_METHOD(haptic:(NSString *)type)
 RCT_EXTERN_METHOD(hapticWithPattern:(NSArray<NSString *> *)pattern)
 RCT_EXTERN_METHOD(play:(nonnull NSString *)fileName loop:(nonnull BOOL)loop)
+RCT_EXTERN_METHOD(stop)
 
 + (BOOL)requiresMainQueueSetup
 {

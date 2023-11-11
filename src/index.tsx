@@ -54,3 +54,11 @@ export function play(fileName: string, loop: boolean = false) {
   }
   Haptics.play(fileName, loop);
 }
+
+export function stop() {
+  if (Platform.OS === 'android') {
+    console.log('Haptics is not supported on Android');
+    return;
+  }
+  Haptics.stop();
+}

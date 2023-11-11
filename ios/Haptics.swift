@@ -67,4 +67,9 @@ class Haptics: NSObject {
     func play(fileName: String, loop: Bool) {
         Vibrator.shared.startHaptic(named: fileName, loop: loop)
     }
+
+    @objc(stop)
+    func stop() {
+        Vibrator.shared.stopHaptic()
+    }
 }
