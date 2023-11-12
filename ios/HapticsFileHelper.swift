@@ -120,6 +120,7 @@ public class Vibrator {
     public func stopHaptic() {
         stopHapticLoopTimer()
         try? hapticPlayer?.stop(atTime: CHHapticTimeImmediate)
+        hapticEngine?.stop()
         hapticPlayer = nil
     }
     
