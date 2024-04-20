@@ -14,10 +14,6 @@ export type HapticType =
   | 'selectionChanged';
 
 export function haptic(type: HapticType = 'medium') {
-  if (Platform.OS === 'android') {
-    console.log('Haptics is not supported on Android');
-    return;
-  }
   Haptics.haptic(type);
 }
 
@@ -40,16 +36,11 @@ export type HapticPattern =
   | '='; // Represents a wait of 1 second
 
 export function hapticWithPattern(pattern: HapticPattern[]) {
-  if (Platform.OS === 'android') {
-    console.log('Haptics is not supported on Android');
-    return;
-  }
   Haptics.hapticWithPattern(pattern);
 }
 
 export function play(fileName: string, loop: boolean = false) {
   if (Platform.OS === 'android') {
-    console.log('Haptics is not supported on Android');
     return;
   }
   Haptics.play(fileName, loop);
@@ -57,7 +48,6 @@ export function play(fileName: string, loop: boolean = false) {
 
 export function stop() {
   if (Platform.OS === 'android') {
-    console.log('Haptics is not supported on Android');
     return;
   }
   Haptics.stop();

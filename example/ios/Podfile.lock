@@ -1,6 +1,6 @@
 PODS:
   - boost (1.76.0)
-  - candlefinance-haptics (0.2.3):
+  - candlefinance-haptics (0.3.2):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - CocoaAsyncSocket (7.6.5)
@@ -619,7 +619,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
-  candlefinance-haptics: 22e2a8560b86b9ef10f8677e6c5d8d14496a22a5
+  candlefinance-haptics: 1e86f183628ad882f0c3f54d0e1c4a1c39e7e1ce
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 71803c074f6325f10b5ec891c443b6bbabef0ca7
