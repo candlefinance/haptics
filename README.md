@@ -19,7 +19,7 @@
 
 <br/>
 
-Supports playing haptics on iOS with default UIImpactFeedbackGenerator and CoreHaptics for patterns and ahap files.
+Supports playing haptics on iOS with default UIImpactFeedbackGenerator and CoreHaptics for patterns and ahap files. Vibrates on Android.
 
 ## Installation
 
@@ -44,7 +44,7 @@ haptic('medium');
 // pattern
 hapticWithPattern(['.', '.', '.', 'o', 'O', '-', 'O', 'o', '.', '.', '.', '.']);
 
-// play ahap file
+// play ahap file (iOS only)
 play('fileName');
 ```
 
