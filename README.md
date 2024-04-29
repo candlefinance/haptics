@@ -4,7 +4,9 @@
 <br/>
 
 <div align="center">
-  <img alt="npm downloads" src="https://img.shields.io/npm/dw/@candlefinance/@candlefinance/haptics?logo=npm&label=NPM%20downloads&cacheSeconds=3600"/>
+  <a href="https://www.npmjs.com/package/@candlefinance/haptics">
+  <img src="https://img.shields.io/npm/dm/@candlefinance/haptics" alt="npm downloads" />
+</a>
   <a alt="discord users online" href="https://discord.gg/qnAgjxhg6n" 
   target="_blank"
   rel="noopener noreferrer">
