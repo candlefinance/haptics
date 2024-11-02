@@ -43,7 +43,7 @@ import { haptic, hapticWithPattern } from '@candlefinance/haptics';
 // light, medium, heavy, soft, rigid, warning, error, success, selectionChanged
 haptic('medium');
 
-// pattern
+// pattern (iOS only)
 hapticWithPattern(['.', '.', '.', 'o', 'O', '-', 'O', 'o', '.', '.', '.', '.']);
 
 // play ahap file (iOS only)
